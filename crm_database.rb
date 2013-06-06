@@ -8,7 +8,6 @@ class Database
 
   def add(contact)
     @contacts_array << contact
-    # add info to db push into contacts array
   end
 
   def modify_contact(selection, attribute, modification)
