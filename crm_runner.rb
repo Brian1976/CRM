@@ -27,11 +27,12 @@ loop do
     # Get the various contact attributes from the user and store them to variables
     # Insert those variables in a new contact and add them to the database
   end
+	end
   when "modify"
   	puts("Please select an attribute (id,firstname,lastname,email,notes) to modify")
   	@ans = gets.chomp
   	if gets.chomp == "id"
-  		puts"are you sure you want to edit the id (yes or no)?"
+  		puts"are you sure you want to edit the id (yes or no) (if yes please enter)?"
   		if gets.chomp == "no"
   			continue
   		else
@@ -40,7 +41,7 @@ loop do
   		end
   	end
   	if gets.chomp == @firstname
-  		puts"are you sure you want to edit the firstname (yes or no)?"
+  		puts"are you sure you want to edit the firstname (yes or no)(if yes please enter)?"
   		if gets.chomp == "no"
   			continue
   		else
@@ -49,7 +50,7 @@ loop do
   		end
   	end
   	if gets.chomp == @lastname
-  		puts"are you sure you want to edit the last name (yes or no)?"
+  		puts"are you sure you want to edit the last name (yes or no)(if yes please enter)?"
   		if gets.chomp == "no"
   			continue
   		else
@@ -58,7 +59,7 @@ loop do
   		end
   	end
   	if gets.chomp == @email
-  		puts"are you sure you want to edit your email (yes or no)?"
+  		puts"are you sure you want to edit your email (yes or no)(if yes please enter)?"
   		if gets.chomp == "no"
   			continue
   		else
@@ -67,7 +68,7 @@ loop do
   		end
   	end
   	if gets.chomp == @notes
-  		puts"are you sure you want to edit the notes (yes or no)?"
+  		puts"are you sure you want to edit the notes (yes or no)(if yes please enter)?"
   		if gets.chomp == "no"
   			continue
   		else
@@ -75,7 +76,6 @@ loop do
   			puts "notes were changed to " + @contacts_array
   		end
   	end
-
     # Prompt the user to select an attribute
     # Confirm that they have selected the correct attribute
     # If 'yes', prompt them to type the new value for the attribute
@@ -98,11 +98,27 @@ loop do
 
   when "display attribute"
   	puts "Please select a contact choosing (id,firstname,lastname,email,notes) to see all the data about them"
-  	$ans = gets.chomp
+  	@ans = gets.chomp
+  	@max = @contacts_array.count
+  	@i = 0;
+  	while @i < contacts_array.count do # find the key
+  		if @i == contacts_array["0"]
+  			@key = @i
+  			@i += 1
+  		else
+  			@i += 1
+  		end
+  	end
   	if $ans.include?
-  		puts "Your answer is " + contacts_array['$arr_ans']
+  		while contacts_array.count
+  		puts "Your answer is " 
+  		while + contacts_array['$arr_ans']
   	end
   end
+
+  @i = 0
+  while @i < @max
+  	puts contacts_array[$i]
     # Prompt the user to search the database by one of the five attributes (E.g. "ID")
     # Display all of the the contacts by that attribute
   when "delete"
@@ -118,47 +134,3 @@ loop do
     # Exit from the program
   end
 end
-
-=begin
-from when modify
-  	if gets.chomp == @id
-  		puts"are you sure you want to edit your id (yes or no)?"
-  		if gets.chomp == "no"
-  			modify
-  		else
-  			db.id = gets.chomp
-  		end
-  	end
-  	if gets.chomp == @firstname
-  		puts"are you sure you want to edit your id (yes or no)?"
-  		if gets.chomp == "no"
-  			modify
-  		else
-  			db.id = gets.chomp
-  		end
-  	end
-  	if gets.chomp == @lastname
-  		puts"are you sure you want to edit your id (yes or no)?"
-  		if gets.chomp == "no"
-  			modify
-  		else
-  			db.id = gets.chomp
-  		end
-  	end
-  	if gets.chomp == @email
-  		puts"are you sure you want to edit your id (yes or no)?"
-  		if gets.chomp == "no"
-  			modify
-  		else
-  			db.id = gets.chomp
-  		end
-  	end
-  	if gets.chomp == @notes
-  		puts"are you sure you want to edit your id (yes or no)?"
-  		if gets.chomp == "no"
-  			modify
-  		else
-  			db.id = gets.chomp
-  		end
-  	end
- =end

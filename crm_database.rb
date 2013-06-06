@@ -15,7 +15,6 @@ class Database
   end
 
   def display_all_contacts
-    puts "in display_all_contacts"
     $i = contacts.length
     puts("length is") + $i
     $j = num
