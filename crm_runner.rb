@@ -11,17 +11,18 @@ loop do
   #ATTR << "id" << "firstname" << "lastname" << "email" << "notes"
   #puts "ATTR is" + ATTR
   case input
-  when "add"  	
-    puts("enter your id")
-    id = gets.chomp
-    puts("enter your first name:")
-    @contacts_array << gets.chomp
-    puts("enter your last name:")
-    @contacts_array << gets.chomp
-    puts("enter your email:")
-    @contacts_array << gets.chomp
-    puts("enter some notes:")
-    @contacts_array << gets.chomp
+  when "add"
+      puts("enter your id:")
+      @contacts_array(id) << gets.chomp
+      puts("enter your first name:")
+      @contacts_array(firstname) << gets.chomp
+      puts("enter your last name:")
+      @contacts_array(lastname) << gets.chomp
+      puts("enter your email:")
+      @contacts_array(email) << gets.chomp
+      puts("enter some notes:")
+      @contacts_array(notes) << gets.chomp
+    end
 
   	db.add(Contact.new(id,firstname,lastname,email,notes))
     # Get the various contact attributes from the user and store them to variables
@@ -80,8 +81,7 @@ loop do
     # If 'yes', prompt them to type the new value for the attribute
     # Display that the contact was successfully updated to the user 
   when "display all"
-  	puts .
-    # Display all of the contacts in the database to the user
+  	contacts_array.each { |elem| puts elem }
 	end
   when "display contact"
     # Prompt the user to select a contact by a specific contact attribute (E.g. Khurram)

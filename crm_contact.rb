@@ -10,5 +10,10 @@ class Contact
   end
 
   def display_contact
+    puts "#{id}"
+    puts "#{firstname}"
+    puts "#{lastname}"
+    puts "#{email}"
+    puts "#{notes}"
   end
 end

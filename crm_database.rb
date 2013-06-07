@@ -15,12 +15,7 @@ class Database
   end
 
   def display_all_contacts
-    $i = contacts.length
-    puts("length is") + $i
-    $j = num
-    while $i<=$num do
-      contacts_array[$i]
-      $j += 1
+    contacts.each { |user| puts user }
     end
   end
 
