@@ -27,7 +27,6 @@ loop do
     # Get the various contact attributes from the user and store them to variables
     # Insert those variables in a new contact and add them to the database
   end
-	end
   when "modify"
   	puts("Please select an attribute (id,firstname,lastname,email,notes) to modify")
   	@ans = gets.chomp
