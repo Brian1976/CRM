@@ -57,6 +57,7 @@ loop do
         # Prompt the user to search the database by one of the five attributes (E.g. "ID")
         # Display all of the the contacts by that attribute
     when "delete"
+      continue
       # Prompt the user to select a contact by a specific contact attribute (E.g. Khurram)
       # Store the input in a variable and display a prompt to confirm "yes" or "no"
       # If 'yes', prompt them to type the new value for the attribute
@@ -64,7 +65,7 @@ loop do
       # If 'no', prompt them to type the new value for the attribute
       # Display that the contact could not be found to the user
     when "exit"
-
+      continue
     else
     # Exit from the program
   end
