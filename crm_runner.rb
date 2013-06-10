@@ -15,7 +15,7 @@ loop do
   #puts "ATTR is" + ATTR
   case input
     when "add"
-      add(input)  	
+      add  	
     # Get the various contact attributes from the user and store them to variables
     # Insert those variables in a new contact and add them to the database  
     when "modify"
