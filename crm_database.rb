@@ -9,39 +9,38 @@ class Database
   def add
     puts("enter your id:")
     id = gets.chomp
-    hash{ :id => id }
     
     puts("enter your first name:")
     firstname = gets.chomp
-    hash{ :firstname => firstname }
     
     puts("enter your last name:")
     lastname = gets.chomp
-    hash{ :lastname => lastname }
 
     puts("enter your email:")
     email = gets.chomp
-    hash{ :email => email }
 
     puts("enter some notes:")
     notes = gets.chomp
-    hash{ :notes => notes }
 
-    db.add(Contact.new(hash { :id,:firstname,:lastname,:email:notes } )
+    db.add(Contact.new(@contacts_array = {:count => 0, :id => id, :firstname => firstname, :lastname => lastname, :email => email, :notes => notes} ))
   end
 
   def modify_contact(selection, attribute, modification)
     puts("Please select an attribute (id,firstname,lastname,email,notes) to modify")
     attribute = gets.chomp
-    foreach(contacts_array[i])
-      hash{ :attribute = attribute }
-  end
+    puts("are you sure you want to change" + attribute + " to " + modify + " from " + selection + "?"
+    puts h.sort
+
+    #@contacts_array.keys.sort.each do |key|
+      #puts "#{key}"
+      #contacts_array[key].each { |attribute| puts attribute }
+
     # Prompt the user to select an attribute
     # Confirm that they have selected the correct attribute
     # If 'yes', prompt them to type the new value for the attribute
     # Display that the contact was successfully updated to the user
   end
-
+=begin
   def display_all_contacts
     contacts_array.each { |user| puts user }
     end
@@ -58,4 +57,5 @@ class Database
   def delete_contact(attribute)
     puts("delete_contact")
   end
+=end
 end
